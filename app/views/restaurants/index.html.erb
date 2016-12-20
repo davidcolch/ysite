@@ -1,8 +1,14 @@
+<div class="jumbotron">
+  <h2>YSite is the best place to find restaurants</h2>
+
+</div>
+
+
 <p id="notice"><%= notice %></p>
 
 <h1>Restaurants</h1>
 
-<table>
+<table class= "table table-hover">
   <thead>
     <tr>
       <th>Name</th>
@@ -19,10 +25,10 @@
         <td><%= restaurant.name %></td>
         <td><%= restaurant.address %></td>
         <td><%= restaurant.phone %></td>
-        <td><%= restaurant.website %></td>
-        <td><%= link_to 'Show', restaurant %></td>
-        <td><%= link_to 'Edit', edit_restaurant_path(restaurant) %></td>
-        <td><%= link_to 'Destroy', restaurant, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to restaurant.website, restaurant.website %></td>
+        <td><%= link_to 'Show', restaurant, class: "btn btn-default" %></td>
+        <td><%= link_to 'Edit', edit_restaurant_path(restaurant), class: "btn btn-default" %></td>
+        <td><%= link_to 'Destroy', restaurant, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default" %></td>
       </tr>
     <% end %>
   </tbody>
@@ -30,4 +36,6 @@
 
 <br>
 
-<%= link_to 'New Restaurant', new_restaurant_path %>
+<%= link_to 'New Restaurant', new_restaurant_path, class: "btn btn-success" %></br>
+
+<%= image_tag "https://s3.amazonaws.com/ysite/staticmapbg.png" %>
